@@ -19,7 +19,7 @@ module.exports = {
     },
     async store(req, res){
         const { username:user } = req.body
-
+        
         const userExist = await Dev.findOne( { user } )
 
         if( userExist ) return res.json(userExist)        
