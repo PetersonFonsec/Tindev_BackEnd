@@ -6,7 +6,15 @@ const DevSchema = new Schema({
     name: patter,
     user: patter,
     avatar: patter,
-    bio:String
+    bio:String,
+    likes:[{ 
+        type: Schema.Types.ObjectId,
+        ref: 'Dev'
+    }],
+    deslikes:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Dev'
+    }]
 }, { timestamps: true })
 
-module.export = model('Dev', DevSchema)
+module.exports = model('Dev', DevSchema)
